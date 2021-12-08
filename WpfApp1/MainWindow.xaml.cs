@@ -22,52 +22,10 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        // MobileContext db;
         public MainWindow()
         {
             InitializeComponent();
-           // db = new MobileContext();
-            //db.Vopros.Load(); // загружаем данные
-            //phonesGrid.ItemsSource = db.Vopros.Local.ToBindingList(); // устанавливаем привязку к кэшу
-
-            this.Closing += MainWindow_Closing;
-        }
-        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //db.Dispose();
-        }
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            //db.SaveChanges();
-        }
-
-        private void deleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (phonesGrid.SelectedItems.Count > 0)
-            {
-                for (int i = 0; i < phonesGrid.SelectedItems.Count; i++)
-                {
-                    Vopros phone = phonesGrid.SelectedItems[i] as Vopros;
-                    if (phone != null)
-                    {
-                        //db.Vopros.Remove(phone);
-                    }
-                }
-            }
-            //db.SaveChanges();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Открытие формы Вы действительно хотите выйти -> да, выход
-            //Организовать выход из приложения по нажатию этой кнопки
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            //Добавление теста
-            Dobavlenie_testa dobavlenie_Testa = new Dobavlenie_testa();
-            dobavlenie_Testa.Show();
+           
         }
 
         private void Registr(object sender, RoutedEventArgs e)
@@ -75,6 +33,47 @@ namespace WpfApp1
             //Открытие формы регистрации
             Registrazia registrazia = new Registrazia();
             registrazia.Show();
+        }
+        private void Voyti(object sender, RoutedEventArgs e)
+        {
+            string login = Text_login.Text.Trim();
+            string password = Text_password.Password.Trim();
+            //Проверка на правильность ввода
+            if ((login.Length < 5) || (login.Length > 10))
+            {
+                //Подсказка при наведении мышкой на объект
+                Text_login.ToolTip = "Логин должен представлять последовательность от 5 до 10 символов";
+                Text_login.BorderBrush = Brushes.Red;
+            }
+            else if ((password.Length < 5) || (password.Length > 10))
+            {
+                Text_password.ToolTip = "Пароль должен представлять последовательность от 5 до 10 символов";
+                Text_password.BorderBrush = Brushes.Red;
+            }
+            
+            else
+            {
+                //На случай, если заполнено все верно, прозрачный фон у всех полей
+                Text_login.ToolTip = "";
+                Text_login.BorderBrush = Brushes.Black;
+                Text_password.ToolTip = "";
+                Text_password.BorderBrush = Brushes.Black;
+                //Процесс авторизации
+                Student autStudent = null;
+                using (MobileContext db1 = new MobileContext())
+                {
+                    //Обращение к базе данных, поиск нужной строки
+                    //Обращение к методу, которые вернет либо найденную строчку либо значение по умолчанию
+                    autStudent = db1.Students.Where(b=>b.Login_student==login&&b.Password_student==password)
+                        .FirstOrDefault();
+                }
+                //Смогли ли найти пользователя? Проверка
+                if (autStudent != null)
+                    //Всплывающее окно
+                    MessageBox.Show("Вход выполнен");
+                else
+                    MessageBox.Show("Такого пользователя не существует");
+            }
         }
     }
 }
