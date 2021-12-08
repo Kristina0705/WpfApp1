@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApp1.Registrazia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="500" Width="600">
+    <Grid Margin="0,0,159,-42">
+        <TextBox x:Name="Text_name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,176,0,0"/>
+        <TextBox x:Name="Text_login" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,226,0,0"/>
+        <PasswordBox x:Name="Text_password" PasswordChar="*" MinHeight="30" VerticalAlignment="Top" Width="229" Margin="119,276,85,0"/>
+        <Button Content="Зарегистрироваться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="145,389,0,0" Click="Button_Click_Reg"/>
+        <DatePicker Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Margin="119,331,85,145" />
+        <TextBox x:Name="Text_familia" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,125,0,0"/>
+        <TextBox x:Name="Text_email" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,70,0,0"/>
+
+    </Grid>
+</Window>
