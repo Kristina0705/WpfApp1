@@ -30,5 +30,9 @@ namespace MyLibrary
             this.dataofbith_student = dataofbith_student;
             this.email_student = email_student;
         }
+        public override string ToString()
+        {
+            return "Здравствуйте, "+ Name_student+"  !";
+        }
     }
 }

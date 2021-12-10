@@ -62,10 +62,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Lichny_kabinet.xaml.cs">
+      <DependentUpon>Lichny_kabinet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registrazia.xaml.cs">
       <DependentUpon>Registrazia.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dobavlenie_testa.xaml">
+    <Page Include="Lichny_kabinet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,9 +79,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Dobavlenie_testa.xaml.cs">
-      <DependentUpon>Dobavlenie_testa.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

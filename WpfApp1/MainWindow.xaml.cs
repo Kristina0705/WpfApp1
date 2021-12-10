@@ -69,8 +69,12 @@ namespace WpfApp1
                 }
                 //Смогли ли найти пользователя? Проверка
                 if (autStudent != null)
-                    //Всплывающее окно
-                    MessageBox.Show("Вход выполнен");
+                {
+                    //Если пользователь авторизован, переходим на новую страницу
+                    Lichny_kabinet lichny_Kabinet = new Lichny_kabinet();
+                    lichny_Kabinet.Show();
+                    Hide();
+                }
                 else
                     MessageBox.Show("Такого пользователя не существует");
             }

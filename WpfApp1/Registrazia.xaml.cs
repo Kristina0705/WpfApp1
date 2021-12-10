@@ -70,6 +70,10 @@ namespace WpfApp1
                 Student students = new Student(name, familia, login, password, data,email);
                 db1.Students.Add(students);
                 db1.SaveChanges();
+                //Если пользователь зарегистрировался, его необходимо перенаправить на страницу входа
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Hide();
             }
         }
     }
