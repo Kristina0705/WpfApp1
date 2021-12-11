@@ -8,7 +8,7 @@ namespace WpfApp1.Modeles
         {
 
         }
-        public DbSet<Vopros> Vopros { get; set; }
+        public DbSet<Test> Tests { get; set; }
         public DbSet<Student> Students { get; set; }
     }
 }

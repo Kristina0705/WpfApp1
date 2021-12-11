@@ -13,14 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Modeles;
 using MyLibrary;
+
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для Lichny_kabinet.xaml
+    /// Логика взаимодействия для ProytiTest.xaml
     /// </summary>
-    public partial class Lichny_kabinet : Window
+    public partial class ProytiTest : Window
     {
-        public Lichny_kabinet()
+        public ProytiTest()
         {
             InitializeComponent();
             MobileContext db1 = new MobileContext();
@@ -29,13 +30,11 @@ namespace WpfApp1
             //По итогу выведутся все пользователи
             ListOfUsers.ItemsSource = students;
         }
-
-        private void ProytiTest(object sender, RoutedEventArgs e)
+        private void SamTest(object sender, RoutedEventArgs e)
         {
-            ProytiTest proytiTest = new ProytiTest();
-            proytiTest.Show();
+            SamTest samTest = new SamTest();
+            samTest.Show();
             Hide();
-
         }
     }
 }

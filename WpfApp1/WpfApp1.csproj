@@ -65,8 +65,14 @@
     <Compile Include="Lichny_kabinet.xaml.cs">
       <DependentUpon>Lichny_kabinet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProytiTest.xaml.cs">
+      <DependentUpon>ProytiTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registrazia.xaml.cs">
       <DependentUpon>Registrazia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SamTest.xaml.cs">
+      <DependentUpon>SamTest.xaml</DependentUpon>
     </Compile>
     <Page Include="Lichny_kabinet.xaml">
       <SubType>Designer</SubType>
@@ -84,7 +90,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProytiTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Registrazia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SamTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

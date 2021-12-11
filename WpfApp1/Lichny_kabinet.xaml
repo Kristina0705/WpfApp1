@@ -7,7 +7,21 @@
         mc:Ignorable="d"
         Title="Lichny_kabinet" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="ListOfUsers" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="726" Margin="30,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="New"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Тесты" Click="ProytiTest">
+            </MenuItem>
+        </Menu>
+        
+        <ListView x:Name="ListOfUsers" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="726" Margin="29,54,0,0">
         </ListView>
 
     </Grid>
