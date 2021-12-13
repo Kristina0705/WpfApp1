@@ -5,15 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Регистрация" Height="500" Width="600">
-    <Grid Margin="0,0,159,-42">
-        <TextBox x:Name="Text_name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,176,0,0"/>
-        <TextBox x:Name="Text_login" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,226,0,0"/>
-        <PasswordBox x:Name="Text_password" PasswordChar="*" MinHeight="30" VerticalAlignment="Top" Width="229" Margin="119,276,85,0"/>
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="145,389,0,0" Click="Button_Click_Reg"/>
-        <DatePicker Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Margin="119,331,85,145" />
-        <TextBox x:Name="Text_familia" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,125,0,0"/>
-        <TextBox x:Name="Text_email" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Margin="119,70,0,0"/>
-
+    <Grid Background="#FFFACD" Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" MinHeight="50" />
+        </Grid.RowDefinitions>
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="450" CornerRadius="30" Height="344">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBox x:Name="Text_name" materialDesign:HintAssist.Hint="Введите имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,10,0"/>
+                <TextBox x:Name="Text_familia" materialDesign:HintAssist.Hint="Введите фамилию" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,10,0"/>
+                <TextBox x:Name="Text_login" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,10,0"/>
+                <PasswordBox x:Name="Text_password" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0,0,10,0"/>
+                <TextBox x:Name="Text_email" materialDesign:HintAssist.Hint="Введите email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,10,0"/>
+                <DatePicker x:Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Hint="Укажите дату рождения" Margin="0,0,10,0"/>
+                <Grid>
+                    <Button Content="Зарегистрироваться" HorizontalAlignment="Center" VerticalAlignment="Top" Width="197" Margin="98,18,95,0" Click="Button_Click_Reg" Height="50"/>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

@@ -5,15 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1000">
-    <Grid Margin="0,0,2,-140">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Вход" Height="500" Width="700">
+    <Grid Background="#FFFACD" Margin="0,0,2,0">
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="Auto" MinHeight="133" />
+            <RowDefinition Height="Auto" MinHeight="50" />
         </Grid.RowDefinitions>
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Margin="219,477,0,0" Click="Registr" Height="64"/>
-        <Button Content="Войти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Margin="563,477,0,0" Click="Voyti" Height="64"/>
-        <TextBox x:Name="Text_login" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="356" Margin="281,227,0,0"/>
-        <PasswordBox x:Name="Text_password" PasswordChar="*" MinHeight="30" VerticalAlignment="Top" Width="229" Margin="119,276,85,0"/>
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="30">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Здравствуйте!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBox x:Name="Login" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,10,0"/>
+                <PasswordBox x:Name="Text_password" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0,0,10,0"/>
+
+                <Grid>
+                    <Button Content="Зарегистрироваться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="38,26,0,-8" Click="Registr" Height="50"/>
+                    <Button Content="Войти" HorizontalAlignment="Right" VerticalAlignment="Top" Width="152"  Click="Voyti" Height="64" Style="{StaticResource MaterialDesignFlatButton}" Margin="0,20,33,-16"/>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

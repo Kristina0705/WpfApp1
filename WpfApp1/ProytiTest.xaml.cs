@@ -26,9 +26,9 @@ namespace WpfApp1
             InitializeComponent();
             MobileContext db1 = new MobileContext();
             //Получение данных в лист из БД
-            List<Student> students = db1.Students.ToList();
+            List<Test> tests = db1.Tests.ToList();
             //По итогу выведутся все пользователи
-            ListOfUsers.ItemsSource = students;
+            ListOfUsers.ItemsSource = tests;
         }
         private void SamTest(object sender, RoutedEventArgs e)
         {

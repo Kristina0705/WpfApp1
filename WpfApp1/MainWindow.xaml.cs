@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data.Entity;
 using WpfApp1.Modeles;
 using MyLibrary;
+
 namespace WpfApp1
 {
     /// <summary>
@@ -34,17 +35,18 @@ namespace WpfApp1
             //Открытие формы регистрации
             Registrazia registrazia = new Registrazia();
             registrazia.Show();
+            Hide();
         }
         private void Voyti(object sender, RoutedEventArgs e)
         {
-            string login = Text_login.Text.Trim();
+            string login = Login.Text.Trim();
             string password = Text_password.Password.Trim();
             //Проверка на правильность ввода
             if ((login.Length < 5) || (login.Length > 10))
             {
                 //Подсказка при наведении мышкой на объект
-                Text_login.ToolTip = "Логин должен представлять последовательность от 5 до 10 символов";
-                Text_login.BorderBrush = Brushes.Red;
+                Login.ToolTip = "Логин должен представлять последовательность от 5 до 10 символов";
+                Login.BorderBrush = Brushes.Red;
             }
             else if ((password.Length < 5) || (password.Length > 10))
             {
@@ -55,8 +57,8 @@ namespace WpfApp1
             else
             {
                 //На случай, если заполнено все верно, прозрачный фон у всех полей
-                Text_login.ToolTip = "";
-                Text_login.BorderBrush = Brushes.Black;
+                Login.ToolTip = "";
+                Login.BorderBrush = Brushes.Black;
                 Text_password.ToolTip = "";
                 Text_password.BorderBrush = Brushes.Black;
                 //Процесс авторизации
@@ -72,12 +74,15 @@ namespace WpfApp1
                 if (autStudent != null)
                 {
                     //Если пользователь авторизован, переходим на новую страницу
+                    //Передаем login пользователя, в дальнейшем для приветсвия на странице личного кабинета
+                    App.Current.Resources["User"] = Login.Text;
                     Lichny_kabinet lichny_Kabinet = new Lichny_kabinet();
                     lichny_Kabinet.Show();
                     Hide();
                 }
                 else
                     MessageBox.Show("Такого пользователя не существует");
+
             }
         }
     }

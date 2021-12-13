@@ -23,6 +23,7 @@
         
         <ListView x:Name="ListOfUsers" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="726" Margin="29,54,0,0">
         </ListView>
+        <Label Name="User1" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,241,0,0" Grid.Row="1" Width="495"/>
 
     </Grid>
 </Window>
