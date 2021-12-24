@@ -16,6 +16,7 @@ namespace MyLibrary
         public string Password_student { get { return password_student; } set { password_student = value; } }
         public string Dataofbith_student { get { return dataofbith_student; } set { dataofbith_student = value; } }
         public string Email_student { get { return email_student; } set { email_student = value; } }
+        public List<Result> Results { get; set; }
 
         public Student()
         {

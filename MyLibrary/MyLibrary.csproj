@@ -56,9 +56,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Result.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Test.cs" />
-    <Compile Include="Vopros.cs" />
+    <Compile Include="Question.cs" />
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

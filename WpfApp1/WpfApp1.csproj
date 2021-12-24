@@ -73,6 +73,7 @@
     <Compile Include="Lichny_kabinet.xaml.cs">
       <DependentUpon>Lichny_kabinet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modeles\DBManager.cs" />
     <Compile Include="ProytiTest.xaml.cs">
       <DependentUpon>ProytiTest.xaml</DependentUpon>
     </Compile>
@@ -113,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modeles\MobileContext.cs" />
-    <Compile Include="Modeles\Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
